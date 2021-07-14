@@ -1,4 +1,7 @@
 from .base import *
+
+import firebase_admin
+from firebase_admin import credentials, auth
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -33,3 +36,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #EMAIL_HOST_PASSWORD = get_secret('PASS_EMAIL')
 #########PORT UBUNTU
 #EMAIL_PORT = 587
+
+
+#FIRE BASE
+
+cred = credentials.Certificate("fbkey.json")
+firebase_admin.initialize_app(cred)
